@@ -1,4 +1,4 @@
-import logo from "../assets/RecipesLogo.png"
+import logo from "../../assets/RecipesLogo.png"
 import { logo as logoClass } from "./Banner.module.css"
 
 const Banner = () => {
