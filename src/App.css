@@ -6,3 +6,7 @@ body{
 .text-white{
   color: white;
 }
+
+.cursor-pointer{
+  cursor: pointer;
+}

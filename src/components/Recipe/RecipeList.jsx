@@ -1,9 +1,10 @@
+import { useState } from "react"
 import "../Recipe/Recipe.css"
 import Recipe from "./Recipe"
 
 //No free recipes API found so emulating response here 
 const
-    recipes = [
+    recipesArray = [
         {
             "id": 1,
             "title": "Quick & Easy Tomato Pasta ",
@@ -73,13 +74,14 @@ const
     ]
 
 const RecipeList = function () {
+    const [recipes, setRecipes] = useState(recipesArray);
     return (
         <>
-            <div className="container border mt-5">
+            <div className="container mt-5">
                 <div className="fs-3 mb-5">Recipes List:</div>
                 {
                     recipes.map(recipe => (
-                        <Recipe recipe={recipe} key={recipe.id}/>
+                        <Recipe recipe={recipe} key={recipe.id} />
                     ))
                 }
             </div>
