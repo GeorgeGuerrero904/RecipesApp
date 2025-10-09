@@ -10,16 +10,17 @@ Currently, two official plugins are available:
 ## Runing the project
 
 If you want to run the project locally first install the npm packages
-
-# JSON server
-This project has also integrated in a separated folder an JSON server feature in order to mimic an API in order to start it you can run you'll need to install first the node modules and then run the server
 ```
-cd JsonServer & npm install
+npm install
 ```
 then start the project
 ```
 npm run dev
 ```
+
+
+# JSON server
+This project has also integrated in a separated folder an JSON server feature in order to mimic an API in order to start it you can run you'll need to install first the node modules and then run the server
 
 First
 ```
@@ -29,3 +30,5 @@ and then start the server
 ```
 json-server --watch RecipesDB.json --port 8000
 ```
+
+Is required that the JSON servers runs at the port 8000 in order to be recognized by the app
