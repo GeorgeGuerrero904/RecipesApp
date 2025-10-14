@@ -1,4 +1,9 @@
-function FullRecipe({ recipe, setRecipe }) {
+import { useContext } from "react";
+import navigationContext from "../../navigation/navigationContext";
+import navValues from "../../navigation/navValues";
+
+function FullRecipe() {
+    const { param: recipe, navigate } = useContext(navigationContext);
     return (
         <div className="card m-5">
             <div className="card-body">
@@ -24,7 +29,7 @@ function FullRecipe({ recipe, setRecipe }) {
                         })
                     }
                 </ol>
-                <a href="#" className="card-link" onClick={() => setRecipe(undefined)}>Go Back</a>
+                <a href="#" className="card-link" onClick={() => navigate(navValues.home)}>Go Back</a>
             </div>
         </div>
     );

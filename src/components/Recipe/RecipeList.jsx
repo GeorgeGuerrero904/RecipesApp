@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import "../Recipe/Recipe.css"
 import RecipeOverview from "./RecipeOverview"
 import useRecipes from "../../hooks/useRecipes"
+import navigationContext from "../../navigation/navigationContext"
+import navValues from "../../navigation/navValues"
 
 
-const RecipeList = function ({ selectRecipe }) {
+const RecipeList = function () {
+    const {navigate} = useContext(navigationContext);
     const { recipes, setRecipes, loadingStatus } = useRecipes();
     if(loadingStatus != "Loaded"){
         return <h1>{loadingStatus}</h1>
@@ -18,7 +21,7 @@ const RecipeList = function ({ selectRecipe }) {
 
             {
                 recipes.map(recipe => (
-                    <RecipeOverview selectRecipe={selectRecipe} recipe={recipe} key={recipe.id} />
+                    <RecipeOverview navigate={navigate} recipe={recipe} key={recipe.id} />
                 ))
             }
         </div>
