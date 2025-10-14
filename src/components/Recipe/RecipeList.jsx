@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import "../Recipe/Recipe.css"
-import Recipe from "./Recipe"
+import RecipeOverview from "./RecipeOverview"
 
 
-const RecipeList = function () {
+const RecipeList = function ({selectRecipe}) {
     const [recipes, setRecipes] = useState([]);
 
     useEffect(function () {
@@ -28,7 +28,7 @@ const RecipeList = function () {
 
             {
                 recipes.map(recipe => (
-                    <Recipe recipe={recipe} key={recipe.id} />
+                    <RecipeOverview selectRecipe={selectRecipe} recipe={recipe} key={recipe.id} />
                 ))
             }
         </div>
