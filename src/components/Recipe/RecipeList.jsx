@@ -1,24 +1,14 @@
 import { useEffect, useState } from "react"
 import "../Recipe/Recipe.css"
 import RecipeOverview from "./RecipeOverview"
+import useRecipes from "../../hooks/useRecipes"
 
 
-const RecipeList = function ({selectRecipe}) {
-    const [recipes, setRecipes] = useState([]);
-
-    useEffect(function () {
-        const getRecipes = async function () {
-            let response = await fetch("http://localhost:8000/recipes");
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-
-            const data = await response.json();
-            setRecipes(data)
-        }
-        getRecipes();
-    }, []);
-
+const RecipeList = function ({ selectRecipe }) {
+    const { recipes, setRecipes, loadingStatus } = useRecipes();
+    if(loadingStatus != "Loaded"){
+        return <h1>{loadingStatus}</h1>
+    }
     return (
         <div className="container mt-5">
             <div className="row">
