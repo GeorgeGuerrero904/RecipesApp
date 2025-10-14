@@ -2,13 +2,14 @@ import { useContext, useEffect, useState } from "react"
 import "../Recipe/Recipe.css"
 import RecipeOverview from "./RecipeOverview"
 import useRecipes from "../../hooks/useRecipes"
-import navigationContext from "../../navigation/navigationContext"
-import navValues from "../../navigation/navValues"
+import { useNavigate } from "react-router"
+
 
 
 const RecipeList = function () {
-    const {navigate} = useContext(navigationContext);
-    const { recipes, setRecipes, loadingStatus } = useRecipes();
+    const { recipes, loadingStatus } = useRecipes();
+    const navigate = useNavigate();
+
     if(loadingStatus != "Loaded"){
         return <h1>{loadingStatus}</h1>
     }
