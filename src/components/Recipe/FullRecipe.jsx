@@ -1,4 +1,4 @@
-function FullRecipe({ recipe }) {
+function FullRecipe({ recipe, setRecipe }) {
     return (
         <div className="card m-5">
             <div className="card-body">
@@ -18,13 +18,13 @@ function FullRecipe({ recipe }) {
                 <ol>
                     {
                         recipe.steps.map(step => {
-                            return(
+                            return (
                                 <li>{step}</li>
                             )
                         })
                     }
                 </ol>
-                <a href="#" className="card-link">Go Back</a>
+                <a href="#" className="card-link" onClick={() => setRecipe(undefined)}>Go Back</a>
             </div>
         </div>
     );

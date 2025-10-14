@@ -11,7 +11,7 @@ function App() {
     <>
       <Banner />
       {
-        selectedRecipe ? <FullRecipe recipe={selectedRecipe} /> : <RecipeList selectRecipe={setSelectedRecipe}/>
+        selectedRecipe ? <FullRecipe recipe={selectedRecipe} setRecipe={setSelectedRecipe}/> : <RecipeList selectRecipe={setSelectedRecipe}/>
       }
     </>
   )
