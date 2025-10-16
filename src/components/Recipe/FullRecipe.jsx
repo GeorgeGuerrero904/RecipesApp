@@ -1,4 +1,3 @@
-import navValues from "../../navigation/navValues";
 import { useLocation } from "react-router";
 import { Link } from "react-router";
 

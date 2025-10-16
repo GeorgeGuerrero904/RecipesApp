@@ -18,7 +18,7 @@ function useRecipes() {
         }
         setTimeout(function () {
             getRecipes();
-        }, 2000);
+        }, 1000);
 
     }, []);
 
