@@ -1,7 +1,7 @@
 function Ingredient({ ingredient, remove }) {
     let notes;
     if(ingredient.notes)
-        notes = <div className="fw-bold">{ingredient.notes}</div>
+        notes = <div className="fw-bold">Notes: {ingredient.notes}</div>
     return (
         <li className="list-group-item d-flex justify-content-between align-items-start">
            <div className=""> {`${ingredient.quantity} of ${ingredient.item}`} {notes}</div>
