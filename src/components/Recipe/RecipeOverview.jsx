@@ -1,4 +1,4 @@
-import navValues from "../../navigation/navValues";
+
 
 const RecipeOverview = function ({ recipe, navigate }) {
     //deconstructing recipe object

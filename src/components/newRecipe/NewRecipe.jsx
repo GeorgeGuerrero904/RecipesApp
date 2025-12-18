@@ -45,15 +45,15 @@ function NewRecipe() {
         return await rsp.json();
     };
     const addRecipe = async (recipe) => {
-        const postedRecipe = await postRecipe(recipe);
+        await postRecipe(recipe);
     };
 
     const recipeSubmitAcion = async (formData) => {
         addRecipe({
             title: formData.get("title"),
             description: formData.get("description"),
-            ingredients: ingredients.map(({ id, ...ing }) => ing),
-            steps: stepList.map(({ id, ...step }) => step)
+            ingredients: ingredients.map(({...ing }) => ing),
+            steps: stepList.map((el) => el.step)
         });
         return <Navigate to="/" replace />;
     }

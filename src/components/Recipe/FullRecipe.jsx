@@ -25,7 +25,7 @@ function FullRecipe() {
                     {
                         recipe.steps.map(step => {
                             return (
-                                <li>{step}</li>
+                                <li>{step.toString()}</li>
                             )
                         })
                     }
