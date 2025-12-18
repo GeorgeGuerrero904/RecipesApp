@@ -1,5 +1,4 @@
-import { useLocation } from "react-router";
-import { Link } from "react-router";
+import { useLocation, Link } from "react-router";
 
 function FullRecipe() {
     //const { id } = useParams();

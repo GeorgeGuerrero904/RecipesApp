@@ -22,7 +22,14 @@ npm run dev
 # JSON server
 This project has also integrated in a separated folder an JSON server feature in order to mimic an API in order to start it you can run you'll need to install first the node modules and then run the server
 
-First
+### New update
+Now you can run Json server via NPM script, just run
+```
+npm run startJsonServer
+```
+**Note:** you'll need to install it before using the command below
+
+
 ```
 cd JsonServer & npm install
 ```

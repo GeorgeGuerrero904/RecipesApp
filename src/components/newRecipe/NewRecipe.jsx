@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { ReactSortable } from 'react-sortablejs';
-import { Navigate } from 'react-router';
+import { useNavigate, Link } from 'react-router';
 import Ingredient from "./Ingredient";
 import Step from "./Step";
 import "./NewRecipe.css"
 
 function NewRecipe() {
+    const navigate = useNavigate();
 
     const [ingredients, setIngredients] = useState([]);
     const [currentIngredient, setCurrentIngredient] = useState({ id: 0, item: "", quantity: "", notes: "" });
@@ -52,15 +53,20 @@ function NewRecipe() {
         addRecipe({
             title: formData.get("title"),
             description: formData.get("description"),
-            ingredients: ingredients.map(({...ing }) => ing),
+            ingredients: ingredients.map(({ ...ing }) => ing),
             steps: stepList.map((el) => el.step)
         });
-        return <Navigate to="/" replace />;
+        navigate("/");
+        return true;
     }
     return (
         <div className="container m-5">
             <form action={recipeSubmitAcion} className="row justify-content-between">
-                <h2>New recipe</h2>
+                <div className="col-12 d-flex justify-content-between align-items-center">
+                    <div className="h1">New recipe</div>
+                    <Link to="/">Go Back</Link>
+                </div>
+
                 <div className="mb-3 mt-5">
                     <label htmlFor="title" className="form-label">Title</label>
                     <input type="text" name="title" className="form-control" id="title" />
